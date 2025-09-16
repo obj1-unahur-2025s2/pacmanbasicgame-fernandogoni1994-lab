@@ -4,16 +4,31 @@ import example.*
 program pacmanGame {
 	
 	// límites del juego
-	game.width(14)
-	game.height(8)
+	game.width(14) //Cantidad de celdas ancho
+	game.height(8) //Cantidad de celdas alto
+	// game.cellSize(50) // Producto de alto y ancho
 	
 	// fondo
-	game.boardGround("pacmanBackground.jpg")
+	// game.boardGround("pacmanBackground.jpg")
 	
 	// personaje principal
-	game.addVisualCharacter(pacman)
+	game.addVisualCharacter(pacman) //Character lo que hace es habilitar el movimiento del personaje con flechas.
+	// keyboard.w().onPressDo({pacman.position(pacman.position().up(1))})
+	// keyboard.s().onPressDo({pacman.position(pacman.position().down(1))})
+	// keyboard.a().onPressDo({pacman.position(pacman.position().left(1))})
+	// keyboard.d().onPressDo({pacman.position(pacman.position().right(1))})
+	// keyboard.space().onPressDo({pacman.cambiarSkin("sonic.png")})
+
+
+	//personajes rivales
+	game.addVisual(new Rival(numero = 1))
+	game.addVisual(new Rival(numero = 2))
+	
 	
 	// que arranque el juego!
 	game.start()
 	
+
+	//Titulo del game
+	game.title("Pacman!")
 }
